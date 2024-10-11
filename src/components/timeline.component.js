@@ -15,7 +15,7 @@ function Audio({ url, visible }) {
     onPlay={e => console.log("onPlay")}
   />;
   }
-  return <div/>;
+  return <div>No Audio</div>;
 }
 
 const TimelineItem = ({details})=> {
@@ -28,6 +28,9 @@ const TimelineItem = ({details})=> {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
+            {details.title}
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             {details.category}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -37,7 +40,6 @@ const TimelineItem = ({details})=> {
           visible={details.audio !== "" && details.audio !== undefined} 
           url={`${process.env.REACT_APP_AUDIO_URL}${details.audio}`}
         />
-      
       </CardContent>
       <CardActions>
         <Button size="small">{details.mediaName}</Button>

@@ -1,5 +1,5 @@
 const getImageName = (image)=>{
-    let imageId;
+    let imageId = '';
     if(image !== '' && image != null){
         imageId = image.substring(7);
     }
@@ -7,7 +7,7 @@ const getImageName = (image)=>{
 };
 
 const getAudioName = (audio)=>{
-    let audioId;
+    let audioId = '';
     if(audio !== '' && audio != null){
         audioId = audio.substring(4);
     }

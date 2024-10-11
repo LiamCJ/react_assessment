@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import TimelineItem from './timeline.component';
 import getTimeline from '../services/timeline.service';
+import * as React from 'react';
+import Grid from '@mui/material/Grid2';
 
 const DataTable = ()=> {
 
@@ -19,13 +21,13 @@ const DataTable = ()=> {
    }, []);
 
   return (
-    <ul>
-      {timeline.map(item => (
-        <li key={item.id}>
-          <TimelineItem details={item} />
-        </li>
-      ))}
-    </ul>
+    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        {timeline.map((data, _) => (
+          <Grid key={data.id} size={{ xs: 2, sm: 4, md: 4 }} alignItems="center">
+            <TimelineItem details={data} />
+          </Grid>
+        ))}
+    </Grid>
   );
 }
 
